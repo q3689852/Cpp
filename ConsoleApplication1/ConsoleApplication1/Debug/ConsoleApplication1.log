@@ -1,8 +1,5 @@
-﻿  stdafx.cpp
-  ConsoleApplication1.cpp
-e:\c++\consoleapplication1\consoleapplication1\consoleapplication1.cpp(31): warning C4101: “j”: 未引用的局部变量
-e:\c++\consoleapplication1\consoleapplication1\consoleapplication1.cpp(31): warning C4101: “i”: 未引用的局部变量
-  KaPian.cpp
-  正在生成代码...
-  ConsoleApplication1.vcxproj -> E:\C++\ConsoleApplication1\Debug\ConsoleApplication1.exe
-  ConsoleApplication1.vcxproj -> E:\C++\ConsoleApplication1\Debug\ConsoleApplication1.pdb (Full PDB)
+﻿  ConsoleApplication1.cpp
+c:\users\dgz\desktop\consoleapplication1\consoleapplication1\consoleapplication1.cpp(31): warning C4101: “j”: 未引用的局部变量
+c:\users\dgz\desktop\consoleapplication1\consoleapplication1\consoleapplication1.cpp(31): warning C4101: “i”: 未引用的局部变量
+  ConsoleApplication1.vcxproj -> C:\Users\dgz\Desktop\ConsoleApplication1\Debug\ConsoleApplication1.exe
+  ConsoleApplication1.vcxproj -> C:\Users\dgz\Desktop\ConsoleApplication1\Debug\ConsoleApplication1.pdb (Full PDB)

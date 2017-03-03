@@ -42,7 +42,7 @@ int main()
 			ddz.SetValue(b);
 			
 			all[x] = ddz.GetName();
-			x++;
+			++x;
 		}
 	}
 	
@@ -51,7 +51,7 @@ int main()
 	{
 		player1[i] = all[0 + 3 * i];
 		cout << player1[i] << "\t";
-		if (i % 6 == 0&&i!=0)
+		if (i % 6 >4)
 		{
 			cout << endl;
 		}
@@ -61,7 +61,7 @@ int main()
 	{
 		player1[i] = all[1 + 3 * i];
 		cout << player1[i] << "\t";
-		if (i % 6 == 0 && i != 0)
+		if (i % 6 >4)
 		{
 			cout << endl;
 		}
@@ -71,11 +71,48 @@ int main()
 	{
 		player1[i] = all[2 + 3 * i];
 		cout << player1[i] << "\t";
-		if (i % 6 == 0 && i != 0)
+		if (i % 6 >4)
 		{
 			cout << endl;
 		}
 	}
+
+
+
+
+	//int a_p = 0;	//玩家1的数组下标
+	//int b_p = 0;	//玩家2的数组下标
+	//int c_p = 0;	//玩家3的数组下标
+	//for (int i = 0; i< 54; i++)
+	//{
+	//	int who = i % 3;
+	//	switch (who)
+	//	{
+	//	case 0:
+	//	{
+	//		player1[a_p] = all[i];
+	//		++a_p;
+	//	}
+	//	break;
+	//	case 1:
+	//	{
+	//		player2[b_p] = all[i];
+	//		++a_p;
+	//	}	
+	//	break;
+	//	case 2:
+	//	{
+	//		plarer3[c_p] = all[i];
+	//		++a_p;
+	//	}	
+	//	break;
+	//	}
+	//}
+	//
+	//cout << player1[1] << endl;
+	//cout << player1[2] << endl;
+	//cout << player1[3] << endl;
+	//
 	return 0;
 }
 
