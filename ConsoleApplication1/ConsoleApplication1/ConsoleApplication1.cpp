@@ -8,7 +8,8 @@
 using namespace std;
 __int16 K_Data[6][15] =
 {
-	//  {1,2,3,4,5,6,7,8,9,10,11,12,13,x, d }
+	//  {1,2,3,4,5,6,7,8,9,10,11,12,13,x, d } m0
+
 
 	{ 1,2,3,4,5,6,7,8,9,10,11,12,13,0 ,0 },	//hei
 	{ 1,2,3,4,5,6,7,8,9,10,11,12,13,0 ,0 },	//hong
@@ -25,95 +26,113 @@ int main()
 {
 	KaPian ddz;
 	string all[54];
-	string player1[18];
-	string player2[18];
-	string plarer3[18];
-	 int i, j;
-	int x = 0;
-	for (int i = 0; i < 6; i++)
+	string player1[18] , player2[18] , player3[18];
+
+	int x = 0;							//  all数组的下标
+
+	for (int i = 0; i < 6; i++)   
 	{
 		for (int j = 0; j < 15; j++)
 		{
 			if (K_Data[i][j] == 0)
-				continue;
+			continue;
 			K_Type a = static_cast<K_Type>(i);
 			K_Value b = static_cast<K_Value>(j);
 			ddz.SetType(a);
 			ddz.SetValue(b);
-			
-			all[x] = ddz.GetName();
+			all[x] = ddz.GetName();					//往all存数据
 			++x;
 		}
 	}
+	 
+	//全部的牌
+	/*for (int i = 0; i < 54; i++)
+	cout << all[i] << endl;*/
+
 	
-	cout << endl << "玩家1的牌" << endl << endl;
-	for (int i = 0; i < 18; i++)
-	{
-		player1[i] = all[0 + 3 * i];
-		cout << player1[i] << "\t";
-		if (i % 6 >4)
-		{
-			cout << endl;
+	
+
+
+
+	//发牌
+	int a_p = 0;					//player1数组下标
+	int b_p = 0;					//player2数组下标
+	int c_p = 0;					//player3数组下标
+		for (int i = 0; i< 54; i++)
+		{	
+			int who = i % 3;
+			switch (who)
+			{	
+				case 0:
+				{player1[a_p] = all[i];++a_p;}break;
+				case 1:
+				{player2[b_p] = all[i];++b_p;}	break;
+				case 2:
+				{player3[c_p] = all[i];++c_p;}	break;
+			}
 		}
-	}
-	cout << endl << endl << "玩家2的牌" << endl << endl;
-	for (int i = 0; i < 18; i++)
-	{
-		player1[i] = all[1 + 3 * i];
-		cout << player1[i] << "\t";
-		if (i % 6 >4)
+	
+		//展示
+
+		show(player1,18,"一");
+		show(player2,18,"二");
+		show(player3,18,"三");
+
+		//排序
+		string HEI[13];
+		string HONG[13];
+		string MEI[13];
+		string FANG[13];
+		string GUI[2];
+		for (int i = 0; i < 13; i++)
 		{
-			cout << endl;
+		HEI[i]=all[i];
 		}
-	}
-	cout << endl << endl << "玩家3的牌" << endl << endl;
-	for (int i = 0; i < 18; i++)
-	{
-		player1[i] = all[2 + 3 * i];
-		cout << player1[i] << "\t";
-		if (i % 6 >4)
+		
+		for (int i = 0; i < 13; i++)
 		{
-			cout << endl;
+			HONG[i] = all[ i+13];
 		}
-	}
+		
+		for (int i = 0; i < 13; i++)
+		{
+			MEI[i] = all[i + 26];
+		}
+		
+		for (int i = 0; i < 13; i++)
+		{
+			FANG[i] = all[i + 39];
+		}
+		
+		show(HEI, 13, "黑桃");
+		show(HONG, 13, "红桃");
+		show(MEI, 13, "梅花");
+		show(FANG, 13, "梅花");
+		cout << all[53] << endl;
+//	show(GUI, 2, "王");
 
 
 
+	/*	for (int i = 0; i < 26; i++)
+		{
+		HONG[i]=all[26 + i];
+		}
+		for (int i = 0; i < 39; i++)
+		{
+		MEI[i] = all[39 + i];
+		}
+		for (int i = 0; i < 52; i++)
+		{
+		FANG[i] = all[52 + i];
+		}*/
+		//	
+		//	show(HONG, "红桃");
+		//	show(MEI , "梅花");
+		//	show(MEI, "方片");
+		//show(FANG , "A");
 
-	//int a_p = 0;	//玩家1的数组下标
-	//int b_p = 0;	//玩家2的数组下标
-	//int c_p = 0;	//玩家3的数组下标
-	//for (int i = 0; i< 54; i++)
-	//{
-	//	int who = i % 3;
-	//	switch (who)
-	//	{
-	//	case 0:
-	//	{
-	//		player1[a_p] = all[i];
-	//		++a_p;
-	//	}
-	//	break;
-	//	case 1:
-	//	{
-	//		player2[b_p] = all[i];
-	//		++a_p;
-	//	}	
-	//	break;
-	//	case 2:
-	//	{
-	//		plarer3[c_p] = all[i];
-	//		++a_p;
-	//	}	
-	//	break;
-	//	}
-	//}
-	//
-	//cout << player1[1] << endl;
-	//cout << player1[2] << endl;
-	//cout << player1[3] << endl;
-	//
-	return 0;
+
+			return 0;
 }
 
 	

@@ -2,9 +2,10 @@
 //
 
 #include "stdafx.h"
-
+#include <iostream>
 #include "KaPian.h"
 
+using namespace std;
 __int16 K_Data[6][15] =
 {
 	//  {1,2,3,4,5,6,7,8,9,10,11,12,13,x, d }
@@ -22,6 +23,95 @@ string ValueToString[] = { "Jian","Er","San","Si","Wu","Liu","Qi","Ba","Jiu","Sh
 
 int main()
 {
-    return 0;
+	KaPian ddz;
+	string all[54];
+	string player1[18];
+	string player2[18];
+	string player3[18];
+	int i, j;
+	int x = 0;
+	for (int i = 0; i < 6; i++)
+	{
+		for (int j = 0; j < 15; j++)
+		{
+			if (K_Data[i][j] == 0)
+				continue;
+			K_Type a = static_cast<K_Type>(i);
+			K_Value b = static_cast<K_Value>(j);
+			ddz.SetType(a);
+			ddz.SetValue(b);
+
+			all[x] = ddz.GetName();
+			++x;
+		}
+	}
+
+	//cout << endl << "玩家1的牌" << endl << endl;
+	//for (int i = 0; i < 18; i++)
+	//{
+	//	player1[i] = all[0 + 3 * i];
+	//	cout << player1[i] << "\t";
+	//	if (i % 6 >4)
+	//	{
+	//		cout << endl;
+	//	}
+	//}
+	//cout << endl << endl << "玩家2的牌" << endl << endl;
+	//for (int i = 0; i < 18; i++)
+	//{
+	//	player1[i] = all[1 + 3 * i];
+	//	cout << player1[i] << "\t";
+	//	if (i % 6 >4)
+	//	{
+	//		cout << endl;
+	//	}
+	//}
+	//cout << endl << endl << "玩家3的牌" << endl << endl;
+	//for (int i = 0; i < 18; i++)
+	//{
+	//	player1[i] = all[2 + 3 * i];
+	//	cout << player1[i] << "\t";
+	//	if (i % 6 >4)
+	//	{
+	//		cout << endl;
+	//	}
+	//}
+
+
+	int a_p = 0;					//player1数组下标
+	int b_p = 0;					//player2数组下标
+	int c_p = 0;					//player3数组下标
+	for (int i = 0; i< 54; i++)
+	{
+		int who = i % 3;
+		switch (who)
+		{
+		case 0:
+		{
+			player1[a_p] = all[i];
+			++a_p;
+		}
+		break;
+
+		case 1:
+		{
+			player2[b_p] = all[i];
+			++a_p;
+		}
+		break;
+
+		case 2:
+		{
+			player3[c_p] = all[i];
+			++a_p;
+		}
+		break;
+		}
+	}
+
+	return 0;
 }
+
+
+
 

@@ -1,4 +1,4 @@
-//#include "stdafx.h"
+#include "stdafx.h"
 #include "KaPian.h"
 
 static int IdCount = 0;
@@ -43,4 +43,17 @@ string KaPian::GetName()
 		break;
 	}
 	return TypeName + " " + ValueToString[__Value];
+}
+
+
+
+void show(string *p, int n, string  tishi)
+{
+	cout << endl<< endl << tishi << endl << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout <<  p[i]<< "\t";
+		if (i % 6 > 4)
+			cout << endl;
+	}
 }

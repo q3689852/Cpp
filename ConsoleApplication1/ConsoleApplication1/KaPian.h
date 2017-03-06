@@ -63,3 +63,4 @@ public:
 	~KaPian();
 };
 
+void show(string *p, int n, string tishi);
